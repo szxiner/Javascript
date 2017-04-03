@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="myScript.js" charset="utf-8"></script>
+    <title>Practice</title>
+  </head>
+  <body>
+    <h2>Introduction</h2>
+    <p id="item"> Show Date </p>
+    <button type="button"
+    onclick="document.getElementById('item').innerHTML = Date()">
+      o(OwO)o
+    </button>
+    <!--Javascript can change HTML content-->
+    <p id="htmlContent">Hello</p>
+    <button type="button"
+    onclick='document.getElementById("htmlContent").innerHTML = "Bye!"'>
+      done
+    </button>
+    <!--Javascript can change HTML attribute-->
+    <!--Javascript can change HTML styles-->
+    <p id="cssStyle">This is a sentence.</p>
+    <button type="button"__
+    onclick='document.getElementById("cssStyle").style.fontSize = "35px"'>
+      style
+    </button>
+    <!--Javascript can hide / show HTML element-->
+    <br>
+    <p id="hide"> I don't want to be here </p>
+    <button type="button"
+    onclick='document.getElementById("hide").style.display = "none"'>
+    Hide
+    </button>
+    <button type="button"
+    onclick='document.getElementById("hide").style.display = "block"'>
+    Show
+    </button>
+
+    <h2>JS output</h2>
+    <!--Four Types: Inner HTML, Document Write, Window Alert, Console Log-->
+    <p id="innerHTML"> </p>
+    <button type="button" onclick="document.write(2+9)"> Delete </button>
+    <br>
+    <!---->
+    <p id="jsTest"> </p>
+    <!---->
+    <p>Input a number between 1 to 100</p>
+    <input id="test" type="text"><br>
+    <button type="button" onclick=testNumber()> Test! </button>
+    <br>
+    <p id="Error"></p>
+    <br>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+
+    <script type="text/javascript">
+      document.getElementById('innerHTML').innerHTML = 4 + 9;
+      document.write(2 + 7);
+      <!--window.alert(1+3);-->
+      console.log(2+1);
+      var x1 = 11;
+      document.getElementById('jsTest').innerHTML = x1;
+
+      function testNumber() {
+        var message, x;
+        message =  document.getElementById("Error");
+        message.innerHTML = " ";
+        x = document.getElementById("test").value;
+        try{
+          if(x == "") throw "empty";
+          if(isNaN(x)) throw "not a number";
+          x = Number(x);
+          if(x<1) throw "too small";
+          if(x>100) throw "too big";
+        }catch(err){
+          message.innerHTML = "The input is " + err;
+        }
+        finally{
+          message.innerHTML = "Correct";
+        }
+      }
+    </script>
+  </body>
+</html>
